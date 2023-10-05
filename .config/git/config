@@ -1,0 +1,23 @@
+[user]
+	name = Maarten Bicknese
+	email = maarten.bicknese@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = ~/.config/git/ignore
+	editor = "nvim"
+[format]
+	pretty = %C(auto)%h %C(yellow)[%C(green)%an%C(auto), %ar%C(yellow)]%C(auto) %s%d
+[color]
+	ui = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[merge "npm-merge-driver"]
+	name = automatically merge npm lockfiles
+	driver = npx npm-merge-driver merge %A %O %B %P
+[safe]
+	directory = /opt/homebrew
+
